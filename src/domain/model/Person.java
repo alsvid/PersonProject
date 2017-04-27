@@ -5,6 +5,10 @@
  */
 package domain.model;
 
+import domain.db.FriendList;
+import domain.db.FriendListInMemory;
+import java.util.ArrayList;
+
 /**
  *
  * @author Alsvid
@@ -16,6 +20,7 @@ public class Person {
     private String userid;
     private String password;
     public ROLE role;
+    private FriendList friendlist;
 
    
     public ROLE getRole() {
@@ -97,5 +102,12 @@ public class Person {
         return this.password;
     }
     
+    public ArrayList<Person> getArrayFriendList() {
+        return this.friendlist.getFriendlist();
+    }
+    
+    public FriendList getFriendList() {
+        return this.friendlist;
+    }
 
 }
