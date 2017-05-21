@@ -21,7 +21,13 @@ public class PersonListInMemory implements PersonRepository{
     
     public PersonListInMemory() {
         Person p = new Person("Jessica", "Nigri", "Nije", "notapassword",ROLE.ADMINISTRATOR);
+        Person q = new Person("Jessica1", "Nigri1", "Nije1", "notapassword",ROLE.ADMINISTRATOR);
+        Person r = new Person("Jessica2", "Nigri2", "Nije2", "notapassword",ROLE.ADMINISTRATOR);
         personlist.add(p);
+        personlist.add(q);
+        personlist.add(r);
+        p.getArrayFriendList().add(q);
+        p.getArrayFriendList().add(r);
     }
     @Override
     public void addPerson(Person p) {

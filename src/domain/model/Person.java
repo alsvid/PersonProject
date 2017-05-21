@@ -20,7 +20,7 @@ public class Person {
     private String userid;
     private String password;
     public ROLE role;
-    private FriendList friendlist;
+    private FriendListInMemory friendlist = new FriendListInMemory();
 
    
     public ROLE getRole() {
@@ -106,7 +106,7 @@ public class Person {
         return this.friendlist.getFriendlist();
     }
     
-    public FriendList getFriendList() {
+    public FriendListInMemory getFriendList() {
         return this.friendlist;
     }
 
