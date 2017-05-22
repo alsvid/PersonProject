@@ -20,6 +20,7 @@ public class Person {
     private String userid;
     private String password;
     public ROLE role;
+    public STATUS status;
     private FriendListInMemory friendlist = new FriendListInMemory();
 
    
@@ -29,6 +30,26 @@ public class Person {
     
     public void setRole(ROLE role) {
         this.role = role;
+    }
+    
+    public void setStatus(STATUS status) {
+        this.status = status;
+    }
+    
+    public void setStatusString(String status) {
+        switch (status.toLowerCase()) {
+            case "online":
+                setStatus(STATUS.ONLINE);
+                break;
+            case "offline":
+                setStatus(STATUS.OFFLINE);
+                break;
+            case "away":
+                setStatus(STATUS.AWAY);
+                break;
+            default:
+                throw new IllegalArgumentException("Wrong status, please choose between offline, online or away");
+        }
     }
     
     public void setRoleString(String role) {
@@ -53,16 +74,33 @@ public class Person {
         }
     }
     
+   public String getStatusString() {
+    if (this.status == STATUS.OFFLINE) {
+        return "offline";
+    }
+    else if (this.status == STATUS.ONLINE) {
+        return "online";
+    }
+    else {
+        return "away";
+    }
+}
+    
     public enum ROLE{
         CLIENT,ADMINISTRATOR
+    }
+    
+    public enum STATUS{
+        ONLINE,OFFLINE,AWAY
     }
     
     public Person() {
         
     }
     
-    public Person(String firstname, String lastname, String userid, String password, ROLE role) {
+    public Person(String firstname, String lastname, String userid, String password, ROLE role, STATUS status) {
         this.role = role;
+        this.status = status;
         setFirstname(firstname);
         setLastname(lastname);
         setUserid(userid);

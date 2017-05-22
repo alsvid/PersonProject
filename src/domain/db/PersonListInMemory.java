@@ -7,6 +7,7 @@ package domain.db;
 
 import domain.model.*;
 import domain.model.Person.ROLE;
+import domain.model.Person.STATUS;
 import java.util.ArrayList;
 import java.util.List;
 import domain.service.PersonRepository;
@@ -20,9 +21,9 @@ public class PersonListInMemory implements PersonRepository{
     private List<Person> personlist = new ArrayList<Person>();
     
     public PersonListInMemory() {
-        Person p = new Person("Jessica", "Nigri", "Nije", "notapassword",ROLE.ADMINISTRATOR);
-        Person q = new Person("Jessica1", "Nigri1", "Nije1", "notapassword",ROLE.ADMINISTRATOR);
-        Person r = new Person("Jessica2", "Nigri2", "Nije2", "notapassword",ROLE.ADMINISTRATOR);
+        Person p = new Person("Jessica", "Nigri", "Nije", "notapassword",ROLE.ADMINISTRATOR, STATUS.OFFLINE);
+        Person q = new Person("Jessica1", "Nigri1", "Nije1", "notapassword",ROLE.ADMINISTRATOR, STATUS.AWAY);
+        Person r = new Person("Jessica2", "Nigri2", "Nije2", "notapassword",ROLE.ADMINISTRATOR, STATUS.ONLINE);
         personlist.add(p);
         personlist.add(q);
         personlist.add(r);

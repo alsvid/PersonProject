@@ -21,9 +21,9 @@ import domain.service.PersonRepository;
  *
  * @author Alsvid
  */
-public class PersonListInDb implements PersonRepository {
+public class PersonListInDb  {
     
-    private Properties properties;
+   /* private Properties properties;
     private String url;
     private Connection connection;
     private PreparedStatement statement;
@@ -160,5 +160,5 @@ public class PersonListInDb implements PersonRepository {
     @Override
     public boolean checkUseridAvailable(String userid) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    } */
 }
